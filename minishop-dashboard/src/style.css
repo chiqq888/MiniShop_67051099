@@ -47,3 +47,25 @@
 .sidebar-icon-profile {
   mask-image: url('./assets/user-rounded-svgrepo-com.svg');
 }
+
+.metric-icon {
+  display: block;
+  width: 2.25rem;
+  height: 2.25rem;
+  background-color: currentColor;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+.metric-icon-products {
+  mask-image: url('./assets/box-minimalistic-svgrepo-com.svg');
+}
+
+.metric-icon-orders {
+  mask-image: url('./assets/cart-3-svgrepo-com.svg');
+}
+
+.metric-icon-revenue {
+  mask-image: url('./assets/dollar-minimalistic-svgrepo-com.svg');
+}
