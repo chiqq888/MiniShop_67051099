@@ -12,51 +12,51 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   </head>
 
-  <body data-current-page="products" class="font-inter grid min-h-screen grid-cols-1 grid-rows-[auto_auto_1fr] md:grid-cols-[15rem_minmax(0,1fr)] md:grid-rows-[auto_1fr]">
-    <nav class="border-b border-gray-200 bg-white md:col-span-2">
+  <body data-current-page="products" class="font-inter grid min-h-screen grid-cols-1 grid-rows-[auto_auto_1fr] lg:grid-cols-[15rem_minmax(0,1fr)] lg:grid-rows-[auto_1fr]">
+    <nav class="border-b border-gray-200 bg-white lg:col-span-2">
 
-      <div class="flex w-full items-center justify-between px-4 py-4 sm:px-10">
+      <div class="flex w-full items-center justify-between px-3 py-3 sm:px-6 lg:px-10 lg:py-4">
 
         <!-- Logo -->
         <div>
-          <h1 class="text-2xl font-bold text-blue-600">
+          <h1 class="text-xl font-bold text-blue-600 sm:text-2xl">
             MiniShop
           </h1>
-          <p class="text-sm text-gray-500">
+          <p class="text-xs text-gray-500 sm:text-sm">
             Online Shopping
           </p>
         </div>
 
-        <div class="flex items-center gap-4 pl-4 sm:gap-10">
-          <img src="/src/assets/minimalistic-magnifer-svgrepo-com.svg" alt="Search" class="h-7 w-7">
+        <div class="flex items-center gap-3 pl-2 sm:gap-6 sm:pl-4 lg:gap-10">
+          <img src="/src/assets/minimalistic-magnifer-svgrepo-com.svg" alt="Search" class="h-6 w-6 sm:h-7 sm:w-7">
           <span class="relative inline-flex">
-            <img src="/src/assets/cart-3-svgrepo-com.svg" alt="Cart" class="h-7 w-7">
+            <img src="/src/assets/cart-3-svgrepo-com.svg" alt="Cart" class="h-6 w-6 sm:h-7 sm:w-7">
             <span class="cart-count absolute -right-2 -top-2 min-w-5 rounded-full bg-blue-600 px-1 text-center text-xs font-semibold leading-5 text-white" aria-live="polite">0</span>
           </span>
-          <img src="/src/assets/user-circle-svgrepo-com.svg" alt="Profile" class="h-7 w-7">
+          <img src="/src/assets/user-circle-svgrepo-com.svg" alt="Profile" class="h-6 w-6 sm:h-7 sm:w-7">
         </div>
 
       </div>
     </nav>
 
-    <aside class="border-b border-gray-200 px-6 py-6 md:border-b-0 md:border-r" aria-label="Sidebar">
-      <nav class="flex flex-col gap-1" aria-label="Main menu">
-        <a class="sidebar-link" href="/src/dashboard.html" data-page="dashboard">
+    <aside class="border-b border-gray-200 px-3 py-3 lg:border-b-0 lg:border-r lg:px-6 lg:py-6" aria-label="Sidebar">
+      <nav class="grid grid-cols-3 gap-1 lg:flex lg:flex-col" aria-label="Main menu">
+        <a class="sidebar-link flex flex-col items-center gap-1 rounded-lg px-1 py-2 text-xs lg:flex-row lg:gap-3 lg:px-4 lg:py-3 lg:text-base" href="/src/dashboard.html" data-page="dashboard">
           <span class="sidebar-icon sidebar-icon-dashboard" aria-hidden="true"></span>
           <span>Dashboard</span>
         </a>
-        <a class="sidebar-link" href="/src/products.html" data-page="products">
+        <a class="sidebar-link flex flex-col items-center gap-1 rounded-lg px-1 py-2 text-xs lg:flex-row lg:gap-3 lg:px-4 lg:py-3 lg:text-base" href="/src/products.html" data-page="products">
           <span class="sidebar-icon sidebar-icon-products" aria-hidden="true"></span>
           <span>Products</span>
         </a>
-        <a class="sidebar-link" href="/src/profile.html" data-page="profile">
+        <a class="sidebar-link flex flex-col items-center gap-1 rounded-lg px-1 py-2 text-xs lg:flex-row lg:gap-3 lg:px-4 lg:py-3 lg:text-base" href="/src/profile.html" data-page="profile">
           <span class="sidebar-icon sidebar-icon-profile" aria-hidden="true"></span>
           <span>Profile</span>
         </a>
       </nav>
     </aside>
 
-    <main class="min-w-0 bg-slate-50 px-5 py-8 md:px-8">
+    <main class="min-w-0 bg-slate-50 px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
       <h1 class="mb-6 text-3xl font-bold text-slate-900">Products</h1>
 
       <div class="mb-5 flex flex-col gap-3 sm:flex-row">
@@ -77,7 +77,7 @@
         </label>
       </div>
 
-      <div id="product-grid" class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+      <div id="product-grid" class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
         <article class="product-card flex flex-col rounded-xl border border-slate-200 bg-white p-4 shadow-sm" data-name="Laptop" data-category="electronics" data-price="12900" data-rating="4.3" data-reviews="24">
           <img class="product-image h-48 w-full rounded-lg bg-slate-100 object-contain" src="/src/assets/mns-Laptop.jpg" alt="Laptop">
           <h2 class="mt-3 font-semibold text-slate-900">Laptop</h2>
@@ -114,10 +114,10 @@
       <p id="no-products" class="mt-8 hidden text-center text-slate-500">No products found.</p>
     </main>
 
-    <dialog id="product-dialog" class="product-dialog w-[calc(100%-2rem)] max-w-2xl rounded-xl border border-slate-200 bg-white p-6 shadow-xl">
+    <dialog id="product-dialog" class="product-dialog w-[calc(100%-2rem)] max-w-2xl rounded-xl border border-slate-200 bg-white p-4 shadow-xl sm:p-6">
       <button id="close-product-dialog" type="button" class="absolute right-4 top-3 text-2xl leading-none text-slate-500 hover:text-slate-900" aria-label="Close product details">&times;</button>
-      <div class="grid gap-6 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)]">
-        <img id="dialog-product-image" class="h-52 w-full rounded-xl bg-slate-100 object-contain" src="/src/assets/mns-Laptop.jpg" alt="">
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] sm:gap-6">
+        <img id="dialog-product-image" class="h-40 w-full rounded-xl bg-slate-100 object-contain sm:h-52" src="/src/assets/mns-Laptop.jpg" alt="">
         <div>
           <h2 id="dialog-product-name" class="text-2xl font-bold text-slate-900">Laptop</h2>
           <p id="dialog-product-price" class="mt-2 text-2xl font-bold text-slate-900">฿12,900</p>

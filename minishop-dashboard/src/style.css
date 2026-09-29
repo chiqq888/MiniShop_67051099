@@ -4,11 +4,6 @@
 }
 
 .sidebar-link {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
   color: #6b7280;
   text-decoration: none;
   transition: color 150ms, background-color 150ms;
@@ -142,6 +137,15 @@
   width: 1.25rem;
   height: 1.25rem;
   mask-image: url('./assets/cart-3-svgrepo-com.svg');
+}
+
+.product-dialog {
+  position: fixed;
+  inset: 50% auto auto 50%;
+  max-height: calc(100dvh - 2rem);
+  margin: 0;
+  overflow-y: auto;
+  transform: translate(-50%, -50%);
 }
 
 .product-dialog::backdrop {
