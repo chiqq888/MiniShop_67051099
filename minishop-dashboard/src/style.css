@@ -69,3 +69,81 @@
 .metric-icon-revenue {
   mask-image: url('./assets/dollar-minimalistic-svgrepo-com.svg');
 }
+
+.metric-icon-loyalty {
+  mask-image: url('./assets/medal-ribbon-svgrepo-com.svg');
+}
+
+.profile-avatar-icon,
+.profile-contact-icon {
+  display: block;
+  flex-shrink: 0;
+  background-color: currentColor;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+.profile-avatar-icon {
+  width: 5rem;
+  height: 5rem;
+  mask-image: url('./assets/user-rounded-svgrepo-com.svg');
+}
+
+.profile-contact-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #64748b;
+}
+
+.profile-contact-email {
+  mask-image: url('./assets/letter-svgrepo-com.svg');
+}
+
+.profile-contact-student {
+  mask-image: url('./assets/mention-circle-svgrepo-com.svg');
+}
+
+.product-search-icon,
+.product-star,
+.button-cart-icon {
+  display: inline-block;
+  flex-shrink: 0;
+  background-color: currentColor;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+.product-search-icon {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #94a3b8;
+  transform: translateY(-50%);
+  mask-image: url('./assets/minimalistic-magnifer-svgrepo-com.svg');
+}
+
+.product-star {
+  width: 1rem;
+  height: 1rem;
+  color: #f59e0b;
+  mask-image: url('./assets/star-svgrepo-com.svg');
+}
+
+.product-star-large {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.button-cart-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  mask-image: url('./assets/cart-3-svgrepo-com.svg');
+}
+
+.product-dialog::backdrop {
+  background: rgb(15 23 42 / 55%);
+}

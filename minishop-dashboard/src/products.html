@@ -29,7 +29,10 @@
 
         <div class="flex items-center gap-4 pl-4 sm:gap-10">
           <img src="/src/assets/minimalistic-magnifer-svgrepo-com.svg" alt="Search" class="h-7 w-7">
-          <img src="/src/assets/cart-3-svgrepo-com.svg" alt="Cart" class="h-7 w-7">
+          <span class="relative inline-flex">
+            <img src="/src/assets/cart-3-svgrepo-com.svg" alt="Cart" class="h-7 w-7">
+            <span class="cart-count absolute -right-2 -top-2 min-w-5 rounded-full bg-blue-600 px-1 text-center text-xs font-semibold leading-5 text-white" aria-live="polite">0</span>
+          </span>
           <img src="/src/assets/user-circle-svgrepo-com.svg" alt="Profile" class="h-7 w-7">
         </div>
 
@@ -53,7 +56,84 @@
       </nav>
     </aside>
 
-    <main class="min-w-0"></main>
+    <main class="min-w-0 bg-slate-50 px-5 py-8 md:px-8">
+      <h1 class="mb-6 text-3xl font-bold text-slate-900">Products</h1>
+
+      <div class="mb-5 flex flex-col gap-3 sm:flex-row">
+        <label class="relative min-w-0 flex-1">
+          <span class="sr-only">Search products</span>
+          <span class="product-search-icon" aria-hidden="true"></span>
+          <input id="product-search" type="search" placeholder="Search products..." class="w-full rounded-lg border border-slate-200 bg-white py-3 pl-11 pr-4 text-slate-900 shadow-sm outline-none placeholder:text-slate-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-100">
+        </label>
+        <label class="sm:w-60">
+          <span class="sr-only">Category</span>
+          <select id="product-category" class="w-full rounded-lg border border-slate-200 bg-white px-4 py-3 text-slate-700 shadow-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100">
+            <option value="all">All Categories</option>
+            <option value="electronics">Electronics</option>
+            <option value="audio">Audio</option>
+            <option value="bags">Bags</option>
+            <option value="wearables">Wearables</option>
+          </select>
+        </label>
+      </div>
+
+      <div id="product-grid" class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <article class="product-card flex flex-col rounded-xl border border-slate-200 bg-white p-4 shadow-sm" data-name="Laptop" data-category="electronics" data-price="12900" data-rating="4.3" data-reviews="24">
+          <img class="product-image h-48 w-full rounded-lg bg-slate-100 object-contain" src="/src/assets/mns-Laptop.jpg" alt="Laptop">
+          <h2 class="mt-3 font-semibold text-slate-900">Laptop</h2>
+          <p class="mt-1 text-lg font-bold text-slate-900">฿12,900</p>
+          <p class="mt-2 flex items-center gap-1.5 text-sm text-slate-600"><span class="product-star" aria-hidden="true"></span>4.3 (24)</p>
+          <button type="button" class="open-product-dialog mt-4 w-full rounded-lg bg-blue-600 px-4 py-2.5 font-semibold text-white hover:bg-blue-700">Add to Cart</button>
+        </article>
+
+        <article class="product-card flex flex-col rounded-xl border border-slate-200 bg-white p-4 shadow-sm" data-name="Headphones" data-category="audio" data-price="1290" data-rating="4.3" data-reviews="18">
+          <img class="product-image h-48 w-full rounded-lg bg-slate-100 object-contain" src="/src/assets/mns-Headphones.jpg" alt="Headphones">
+          <h2 class="mt-3 font-semibold text-slate-900">Headphones</h2>
+          <p class="mt-1 text-lg font-bold text-slate-900">฿1,290</p>
+          <p class="mt-2 flex items-center gap-1.5 text-sm text-slate-600"><span class="product-star" aria-hidden="true"></span>4.3 (18)</p>
+          <button type="button" class="open-product-dialog mt-4 w-full rounded-lg bg-blue-600 px-4 py-2.5 font-semibold text-white hover:bg-blue-700">Add to Cart</button>
+        </article>
+
+        <article class="product-card flex flex-col rounded-xl border border-slate-200 bg-white p-4 shadow-sm" data-name="Backpack" data-category="bags" data-price="890" data-rating="4.7" data-reviews="32">
+          <img class="product-image h-48 w-full rounded-lg bg-slate-100 object-contain" src="/src/assets/mns-Backpack.jpg" alt="Backpack">
+          <h2 class="mt-3 font-semibold text-slate-900">Backpack</h2>
+          <p class="mt-1 text-lg font-bold text-slate-900">฿890</p>
+          <p class="mt-2 flex items-center gap-1.5 text-sm text-slate-600"><span class="product-star" aria-hidden="true"></span>4.7 (32)</p>
+          <button type="button" class="open-product-dialog mt-4 w-full rounded-lg bg-blue-600 px-4 py-2.5 font-semibold text-white hover:bg-blue-700">Add to Cart</button>
+        </article>
+
+        <article class="product-card flex flex-col rounded-xl border border-slate-200 bg-white p-4 shadow-sm" data-name="Smart Watch" data-category="wearables" data-price="2990" data-rating="4.4" data-reviews="20">
+          <img class="product-image h-48 w-full rounded-lg bg-slate-100 object-contain" src="/src/assets/mns-SmartWatch.jpg" alt="Smart Watch">
+          <h2 class="mt-3 font-semibold text-slate-900">Smart Watch</h2>
+          <p class="mt-1 text-lg font-bold text-slate-900">฿2,990</p>
+          <p class="mt-2 flex items-center gap-1.5 text-sm text-slate-600"><span class="product-star" aria-hidden="true"></span>4.4 (20)</p>
+          <button type="button" class="open-product-dialog mt-4 w-full rounded-lg bg-blue-600 px-4 py-2.5 font-semibold text-white hover:bg-blue-700">Add to Cart</button>
+        </article>
+      </div>
+
+      <p id="no-products" class="mt-8 hidden text-center text-slate-500">No products found.</p>
+    </main>
+
+    <dialog id="product-dialog" class="product-dialog w-[calc(100%-2rem)] max-w-2xl rounded-xl border border-slate-200 bg-white p-6 shadow-xl">
+      <button id="close-product-dialog" type="button" class="absolute right-4 top-3 text-2xl leading-none text-slate-500 hover:text-slate-900" aria-label="Close product details">&times;</button>
+      <div class="grid gap-6 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)]">
+        <img id="dialog-product-image" class="h-52 w-full rounded-xl bg-slate-100 object-contain" src="/src/assets/mns-Laptop.jpg" alt="">
+        <div>
+          <h2 id="dialog-product-name" class="text-2xl font-bold text-slate-900">Laptop</h2>
+          <p id="dialog-product-price" class="mt-2 text-2xl font-bold text-slate-900">฿12,900</p>
+          <p class="mt-3 flex items-center gap-2 text-slate-600"><span class="product-star product-star-large" aria-hidden="true"></span><span id="dialog-product-rating">4.3 (24)</span></p>
+          <div class="mt-5 flex items-center gap-3" aria-label="Quantity">
+            <button id="decrease-quantity" type="button" class="h-11 w-11 rounded-lg bg-blue-600 text-2xl font-semibold text-white hover:bg-blue-700" aria-label="Decrease quantity">−</button>
+            <output id="product-quantity" class="flex h-11 min-w-16 items-center justify-center rounded-lg border border-slate-200 px-4 font-semibold text-slate-900">1</output>
+            <button id="increase-quantity" type="button" class="h-11 w-11 rounded-lg bg-blue-600 text-2xl font-semibold text-white hover:bg-blue-700" aria-label="Increase quantity">+</button>
+          </div>
+          <button id="confirm-add-to-cart" type="button" class="mt-5 flex w-full items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-3 font-semibold text-white hover:bg-blue-700">
+            <span class="button-cart-icon" aria-hidden="true"></span>
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </dialog>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
